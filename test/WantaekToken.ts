@@ -1,13 +1,13 @@
 import { expect } from "chai";
-import { ethers, web3 } from "hardhat";
+import { ethers } from "hardhat";
 import { BigNumber } from "ethers";
 import { zeroAddress } from "@nomicfoundation/ethereumjs-util";
 import { WantaekToken } from "../typechain-types";
 
 describe("WantaekToken", function () {
   const DEFAULT_ADMIN_ROLE = '0x0000000000000000000000000000000000000000000000000000000000000000';
-  const MINTER_ROLE = web3.utils.soliditySha3('MINTER_ROLE') ?? '0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6';
-  const PAUSER_ROLE = web3.utils.soliditySha3('PAUSER_ROLE') ?? '0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a';
+  const MINTER_ROLE = ethers.utils.keccak256(ethers.utils.toUtf8Bytes('MINTER_ROLE'));
+  const PAUSER_ROLE = ethers.utils.keccak256(ethers.utils.toUtf8Bytes('PAUSER_ROLE'));
 
   const amount = BigNumber.from('5000');
 
