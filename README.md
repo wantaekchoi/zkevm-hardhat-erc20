@@ -3,11 +3,10 @@
 erc20 contract for Polygon zkEVM
 
 ## build and deploy, verify
-
 ```shell
 npx hardhat compile
-NODE_TLS_REJECT_UNAUTHORIZED=0 PRIVATE_KEY=<your private key> API_KEY=<your api key> npx hardhat run scripts/deploy.ts --network zkEVMTestnet
-NODE_TLS_REJECT_UNAUTHORIZED=0 PRIVATE_KEY=<your private key> API_KEY=<your api key> npx hardhat verify --contract contracts/WantaekToken.sol:WantaekToken --network zkEVMTestnet <your contract address>
+PRIVATE_KEY=<your private key> npx hardhat run scripts/deploy.ts --network zkEVMTestnet
+PRIVATE_KEY=<your private key> POLYSCAN_API_KEY=<<your polyscan api key> npx hardhat verify --contract contracts/WantaekToken.sol:WantaekToken --network zkEVMTestnet <your contract address>
 ```
 
 ## deployed contract

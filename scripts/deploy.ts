@@ -1,7 +1,7 @@
-import { ethers } from "hardhat";
+import { ethers } from 'hardhat';
 
 async function main() {
-  const WantaekToken = await ethers.getContractFactory("WantaekToken");
+  const WantaekToken = await ethers.getContractFactory('WantaekToken');
   const wantaekToken = await WantaekToken.deploy();
 
   await wantaekToken.deployed();
